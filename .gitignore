@@ -396,3 +396,8 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# von Moodle vorgegeben
+.DS_Store
+config.php
+.vscode
