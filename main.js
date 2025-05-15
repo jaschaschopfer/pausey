@@ -1,7 +1,8 @@
 // main.js – leaderboard navigation & rendering
+// pages: 0‑today, 1‑week, 2‑all‑time
 
 const periods = ['today', 'week', 'all'];
-let currentIndex = 0; // 0‑today, 1‑week, 2‑all‑time
+let currentIndex = 0;
 
 function buildRow(rank, name, score) {
   const row = document.createElement('div');
@@ -14,27 +15,38 @@ function buildRow(rank, name, score) {
 }
 
 function renderNav() {
-  const nav = document.querySelector('nav ul');
-  nav.innerHTML = '';
-  // left arrow (index > 0)
+  const navUl = document.querySelector('nav ul');
+  navUl.innerHTML = '';
+
+  // set flex alignment depending on page
+  if (currentIndex === 0) {
+    navUl.style.justifyContent = 'flex-end';   // arrow right only
+  } else if (currentIndex === 1) {
+    navUl.style.justifyContent = 'space-between'; // arrows both sides
+  } else {
+    navUl.style.justifyContent = 'flex-start'; // arrow left only
+  }
+
+  // left arrow
   if (currentIndex > 0) {
     const liLeft = document.createElement('li');
     const aLeft = document.createElement('a');
-    aLeft.innerHTML = '&#8592;'; // left arrow
-    aLeft.href = 'javascript:void(0)';
+    aLeft.innerHTML = '&#8592;';
+    aLeft.href = '#';
     aLeft.addEventListener('click', () => changePeriod(currentIndex - 1));
     liLeft.appendChild(aLeft);
-    nav.appendChild(liLeft);
+    navUl.appendChild(liLeft);
   }
-  // right arrow (index < last)
+
+  // right arrow
   if (currentIndex < periods.length - 1) {
     const liRight = document.createElement('li');
     const aRight = document.createElement('a');
-    aRight.innerHTML = '&#8594;'; // right arrow
-    aRight.href = 'javascript:void(0)';
+    aRight.innerHTML = '&#8594;';
+    aRight.href = '#';
     aRight.addEventListener('click', () => changePeriod(currentIndex + 1));
     liRight.appendChild(aRight);
-    nav.appendChild(liRight);
+    navUl.appendChild(liRight);
   }
 }
 
@@ -50,17 +62,17 @@ function loadLeaderboard(period) {
 }
 
 function capitalize(str) {
-  return str.replace(/^./, (c) => c.toUpperCase());
+  return str === 'all' ? 'All Time' : str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 function changePeriod(newIndex) {
   currentIndex = newIndex;
   const period = periods[currentIndex];
-  document.getElementById('boardTitle').textContent = capitalize(period === 'all' ? 'all time' : period);
+  document.getElementById('boardTitle').textContent = capitalize(period);
   loadLeaderboard(period);
   renderNav();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  changePeriod(0); // start with Today
+  changePeriod(0);
 });
