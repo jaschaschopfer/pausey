@@ -1,70 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pausey is an esp32-c6-devkit based device that helps users take breaks and play games like pushups, stretching and guided dancing. Tihs page shows the leaderboard of the game.">
-    <meta name="author" content="Saurabh Mishra, Jascha Schopfer">
-    <meta name="keywords" content="IM4, Trials, HTML, CSS">
-    <meta name="author" content="Saurabh Mishra">
-    <link rel="stylesheet" href="/style/styles.css" class="style" type="text/css">
-    <link rel="stylesheet" href="/script/main.js" class="script" type="text/javascript" defer>
-    <title>Pausey! | Leaderboard</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pausey leaderboard shows daily, weekly or all‑time scores." />
+    <meta name="author" content="Saurabh Mishra, Jascha Schopfer" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Pausey | Leaderboard</title>
 </head>
 <body>
     <header>
-        <div class="leaderboard-header">
-            <h1>Leaderboard</h1>
-        </div>
+        <div class="leaderboard-header"><h1>Leaderboard</h1></div>
     </header>
     <main>
-        <section>
-            <div class="leaderboard-body">
-                <div class="leaderboard-title">
-                    <h2>Today</h2>
-                </div>
-                <section>
-                    <div class="leaderboard-grid">
-                        <div class="grid-row">
-                            <div class="grid-column" id="rank"><h3>1</h3></div>
-                            <div class="grid-column" id="name"><p>John Doe</p></div>
-                            <div class="grid-column" id="score"><p>100 pts.</p></div>
-                        </div>
-                        <div class="grid-row">
-                            <div class="grid-column" id="rank"><h3>2</h3></div>
-                            <div class="grid-column" id="name"><p>Jane Smith</p></div>
-                            <div class="grid-column" id="score"><p>90 pts.</p></div>
-                        </div>
-                        <div class="grid-row">
-                            <div class="grid-column" id="rank"><h3>3</h3></div>
-                            <div class="grid-column" id="name"><p>Bob Johnson</p></div>
-                            <div class="grid-column" id="score"><p>80 pts.</p></div>
-                        </div>
-                        <div class="grid-row">
-                            <div class="grid-column" id="rank"><h3>4</h3></div>
-                            <div class="grid-column" id="name"><p>Alice Brown</p></div>
-                            <div class="grid-column" id="score"><p>70 pts.</p></div>
-                        </div>
-                        <div class="grid-row">
-                            <div class="grid-column" id="rank"><h3>5</h3></div>
-                            <div class="grid-column" id="name"><p>Charlie Davis</p></div>
-                            <div class="grid-column" id="score"><p>60 pts.</p></div>
-                        </div>
-                    </div>
-                </section>
-            </div>
+        <section class="leaderboard-body">
+            <div class="leaderboard-title"><h2 id="boardTitle">Today</h2></div>
+            <!-- Filled dynamically by main.js -->
+            <div class="leaderboard-grid" id="leaderboardGrid"></div>
         </section>
-        <section>
-            <nav>
-                <ul>
-                    <li><a href="/index.html">&#129030;</a></li>
-                </ul>
-            </nav>
-        </section>
+        <nav>
+            <ul><li><a href="/index.html">&#129030;</a></li></ul>
+        </nav>
     </main>
-    <footer>
-        <p>&copy; 2025 IM4. All rights reserved.</p>
-    </footer>
-    
+    <footer><p>&copy; 2025 IM4. All rights reserved.</p></footer>
+    <script src="main.js"></script>
 </body>
 </html>
