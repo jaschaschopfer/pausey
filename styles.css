@@ -1,12 +1,11 @@
-/* Reser CSS  */
-
-
 /* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Styles */
 
 @font-face {
     font-family: "Sora";
@@ -18,6 +17,11 @@
 body {
     font-family: 'Sora', sans-serif;
     background-color: #4C8C57;
+    background-image: url('pausey-background.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #000000;
     line-height: 1.6;
     display: flex;
