@@ -154,8 +154,11 @@ After each session, your score is displayed and uploaded to a central database v
 
 ---
 
-## ScreenShots
+## Pictures and Screenshots
 # INSERT SCREENSHOTS HERE!
+![Vordere Seite](https://github.com/user-attachments/assets/45197f57-99f1-420f-a755-74ab10a6ef22)
+![Seitenansicht](https://github.com/user-attachments/assets/9ceab8ff-9787-4f34-a57b-e7e449bc8c4d)
+![Hintere Seite](https://github.com/user-attachments/assets/2f565c47-e655-4922-a6da-121a1170c520)
 
 ---
 
