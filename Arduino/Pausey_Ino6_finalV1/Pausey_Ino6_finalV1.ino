@@ -47,7 +47,7 @@ const uint8_t PIN_VIBRATION_SENSOR = 19;
 #define STRETCH_MAX_DURATION_SEC   ( 2 * 60)
 #define STRETCH_THRESH_LOW_SEC     60
 #define STRETCH_THRESH_MED_SEC     90
-#define STRETCH_THRESH_HIGH_SEC   120
+#define STRETCH_THRESH_HIGH_SEC   119 // 119 instead of 120, because the program stops itself at 120 (you wouldn't get the maximum points)
 #define STRETCH_SCORE_MAX          10.0f
 
 // Dance (NeoPixel ring)
