@@ -29,7 +29,7 @@ Pausey is a small desktop companion designed to promote healthy movement habits 
 - A buzzer beeps to a 60 BPM rhythm.
 - You press the button at first to start and then whenever you want to stop.
 - The LED ring lights up in direction patterns (↑↓←→).
-- You are encouraged to follow the beat and move accordingly.
+- You are encouraged to follow the beat and move your hands accordingly.
 - No sensors verify your movements; it’s about participation.
 - The longer you dance (up to 2 minutes), the more points you earn (up to 10).
 
