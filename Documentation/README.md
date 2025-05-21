@@ -150,7 +150,8 @@ After each session, your score is displayed and uploaded to a central database v
 
 ## Wiring Diagram
 
-![Steckplan_Pausey](https://github.com/user-attachments/assets/8727f94e-d115-4b47-a694-1cf9a27f6ff6)
+![Steckplan_Pausey](https://github.com/user-attachments/assets/9f3b095c-5a33-4fe9-bdda-de311b0433e9)
+
 
 ---
 
