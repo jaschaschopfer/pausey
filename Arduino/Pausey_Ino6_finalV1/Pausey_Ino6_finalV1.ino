@@ -1,9 +1,9 @@
 // ===== File: Pausey.ino =====
 // Complete, self‑contained sketch – May 2025
 // -----------------------------------------
-//  • 10:51   Push‑Up challenge
-//  • 10:55   Stretch challenge
-//  • 11:00   Dance challenge
+//  • 10:00   Push‑Up challenge
+//  • 14:00   Stretch challenge
+//  • 16:00   Dance challenge
 // -----------------------------------------
 
 #include <Arduino.h>
@@ -22,7 +22,7 @@
 #define WIFI_PASSWORD    "strenggeheim"
 
 // Unique device ID
-#define DEVICE_ID        "PAUSEY-DEV-007"
+#define DEVICE_ID        "PAUSEY-DEV-01"
 
 // I²C pins (OLED + VL6180X)
 const uint8_t PIN_I2C_SDA = 21;
@@ -104,11 +104,11 @@ void loop() {
   struct tm ti;  localtime_r(&now, &ti);
   int secs = ti.tm_hour * 3600 + ti.tm_min * 60 + ti.tm_sec;
 
-  // ───── daily schedule (10:51, 10:55, 11:00) ─────
+  // ───── daily schedule (10:00, 14:00, 16:00) ─────
   const int TIMES[] = {
-    00 * 3600 + 51 * 60,    // 10:51   Push‑Up
-    00 * 3600 + 55 * 60,    // 10:55   Stretch
-    01 * 3600               // 11:00   Dance
+    10 * 3600,    // 10:00   Push‑Up
+    14 * 3600,    // 14:00   Stretch
+    16 * 3600     // 16:00   Dance
   };
   static uint8_t nextGame = 0;      // 0,1,2
 
@@ -188,7 +188,7 @@ void loop() {
 }
 
 // ─────────────────────────────── UTILITIES ─────────────────────────────────
-void connectWiFi() {
+void connectWiFi() {  
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   Serial.print("Connecting Wi‑Fi");
   while (WiFi.status() != WL_CONNECTED) {
@@ -236,7 +236,7 @@ void showInvite(GameType game) {
   display.clearDisplay();
   display.setTextSize(1); display.setTextColor(SSD1306_WHITE); display.setCursor(0,0);
   switch (game) {
-    case GAME_PUSHUP:  display.println("Time for Push‑Ups!");  break;
+    case GAME_PUSHUP:  display.println("Time for Push Ups!");  break;
     case GAME_STRETCH: display.println("Time for Stretch!");   break;
     case GAME_DANCE:   display.println("Time for Dance!");     break;
   }
