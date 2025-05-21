@@ -13,15 +13,23 @@
     font-weight: 100 900;
 }
 
+.bush-strip{
+    display:block;          /* remove inline gap      */
+    width:100vw;            /* span the whole screen  */
+    object-fit:fill;        /* stretch, don’t scale   */
+  }  
+  
+  
+
 
 body {
     font-family: 'Sora', sans-serif;
-    background-color: #4C8C57;
-    background-image: url('pausey-background.svg');
+    background-color: #A3C293;
+    /* background-image: url('pausey-background.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: fixed; */
     color: #000000;
     line-height: 1.6;
     display: flex;
