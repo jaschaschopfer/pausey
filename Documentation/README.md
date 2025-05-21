@@ -6,7 +6,7 @@ Pausey is a small desktop companion designed to promote healthy movement habits 
 ### How to Use Pausey
 1. **Leave the device powered on and connected to Wi-Fi.** It will synchronize time automatically via SNTP.
 2. **At the scheduled times, Pausey will beep and show a message on its OLED display.**
-3. **You start the game by pressing the button.** Each game has its own behavior:
+3. **You start and stop the game by pressing the button.** Each game has its own behavior:
 
 #### Push-Ups (10:00)
 - Detected via a VL6180X distance sensor.
@@ -18,15 +18,16 @@ Pausey is a small desktop companion designed to promote healthy movement habits 
 #### Stretch (14:00)
 - Detected using a vibration sensor that reacts to body movement.
 - After pressing the button, the timer runs for up to 2 minutes.
-- You only hear a final beep when time is up.
+- You only hear a final beep when time is up or if you don't move >5 seconds.
 - Points are awarded based on how long you stretch:
   - Less than 60 seconds: 0 points
-  - 60–90 seconds: 5 points
-  - 90–120 seconds: 7.5 points
+  - 60–89 seconds: 5 points
+  - 90–119 seconds: 7.5 points
   - Full 2 minutes: 10 points
 
 #### Dance (16:00)
 - A buzzer beeps to a 60 BPM rhythm.
+- You press the button at first to start and then whenever you want to stop.
 - The LED ring lights up in direction patterns (↑↓←→).
 - You are encouraged to follow the beat and move accordingly.
 - No sensors verify your movements; it’s about participation.
@@ -234,8 +235,8 @@ We were encouraged to use AI tools during development, and we did so extensively
 
 - **ChatGPT** (used in 4 focused threads):
   - **Planning**: GPT-3.5 (for broad ideation and structuring)
-  - **Coding**: GPT-4 mini-high (for writing and testing Arduino code)
-  - **Debugging**: GPT-4 mini-high (helped resolve issues and optimize logic)
+  - **Coding**: GPT-o4-mini-high (for writing and testing Arduino code)
+  - **Debugging**: GPT-o4-mini-high (helped resolve issues and optimize logic)
   - **Explaining**: GPT-4o (for deeper understanding of sensor behavior and architectural advice)
 
 ---
