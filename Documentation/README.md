@@ -12,7 +12,7 @@ Pausey is a small desktop companion designed to promote healthy movement habits 
 - Detected via a VL6180X distance sensor.
 - When you lower yourself below 10 cm and then rise again, it counts as one push-up.
 - You hear a beep after each successful rep.
-- You can do this for up to 5 minutes or until you press the button again to stop.
+- You can do this for up to 5 minutes, until you press the button again to stop or you reach the maximum points possible.
 - You earn 1 point per push-up, up to 10 points.
 
 #### Stretch (14:00)
