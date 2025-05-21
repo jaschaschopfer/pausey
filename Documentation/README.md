@@ -36,13 +36,135 @@ After each session, your score is displayed and uploaded to a central database v
 
 ---
 
-## Development Process
+## Step by Step Instructions
 
-During the development of Pausey, we followed an iterative and agile approach. We began with ideation and testing, proceeded with parallel development of the microcontroller firmware and frontend components, and concluded with integration and design refinements. Each phase helped us validate assumptions, improve usability, and align the project with the needs of our target group.
+### Hardware Requirements
+
+#### Components
+
+* **ESP32-C6-N8 Dev Board** – 1 ×
+* **OLED Display** (128 × 64, SSD1306, *I²C*) – 1 ×
+* **VL6180X Distance Sensor** – 1 ×
+* **SW-18010P Vibration Sensor** – 1 ×
+* **WS2812B LED Ring** (12 LEDs) – 1 ×
+* **KY-012 Piezo Buzzer** – 1 ×
+* **Tactile Button** – 1 ×
+* **Breadboard & Jumper Wires** – 1 ×
+* **5 V USB Power Supply** – 1 ×
+
+#### Wiring Overview
+
+| Component              | Pin on ESP32                 |
+| ---------------------- | ---------------------------- |
+| **OLED (I²C)**         | SDA → GPIO21<br>SCL → GPIO22 |
+| **VL6180X (I²C)**      | SDA → GPIO21<br>SCL → GPIO22 |
+| **Button**             | GPIO0                        |
+| **Piezo Buzzer**       | GPIO2                        |
+| **Vibration Sensor**   | GPIO19                       |
+| **LED Ring (WS2812B)** | GPIO18                       |
+
+> *Pin numbers can be adjusted according to your circuit design if needed.*
+
+### Software Setup
+
+1. **Install Arduino IDE**
+   Download the latest 2.x release: [https://www.arduino.cc/en/software](https://www.arduino.cc/en/software)
+
+2. **Add ESP32 Board Support**
+
+   1. *File* → *Preferences*
+   2. In **Additional Board URLs** add:
+
+      ```
+      https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+      ```
+   3. *Tools* → *Board* → *Boards Manager* → search **ESP32** → install **“esp32 by Espressif Systems”**
+
+3. **Select Board Settings**
+
+   * **Board:** ESP32-C6 Dev Module
+   * **CPU Frequency:** 80 MHz
+   * **Flash Size:** 2 MB
+
+4. **Install Required Libraries**
+   *Sketch* → *Include Library* → *Manage Libraries…*
+
+   * Adafruit SSD1306
+   * Adafruit GFX
+   * Adafruit VL6180X
+   * Adafruit NeoPixel
+   * Ticker
+   * *(built-in with ESP32 core)* WiFi, HTTPClient, time.h
+
+### Uploading the Firmware & Configuring Backend
+
+1. **Clone/Download the Project**
+   Make sure all source files are inside a folder named **Pausey**. Either keep one big `.ino` or split into multiple tabs.
+
+2. **Connect the ESP32**
+   Plug in via USB → *Tools* → *Port* → select the active serial port.
+
+3. **Flash the Code**
+   Click **Upload**.
+   Open *Serial Monitor* @ 115200 baud to watch logs (Wi-Fi, SNTP sync, etc.).
+
+> *Adjust WIFI_SSID, WIFI_PASSWORD and DEVICE_ID in your .ino file.*
+> *Adjust details of the http POST Request according to your database in your .ino file.*
+
+### Database table Setup
+
+1. Set up a PHP server (e.g., XAMPP).
+2. Create MySQL table:
+
+   ```sql
+   CREATE TABLE scores (
+     userId  VARCHAR(50),
+     gameId  VARCHAR(10),
+     score   INT,
+     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+   );
+   ```
+3. Place `load.php` on the server to handle HTTP POST requests.
+4. Add the config.php file according to your database.
+
+### Testing
+
+1. After uploading the .ino file to the ESP32 and successfully connecting to the WiFi, the OLED should display the **Idle face**.
+2. At **10:00, 14:00, 16:00** it invites you to play.
+3. Press the **button** to start and end the game; points show afterward and are POSTed to your load.php
 
 ---
 
-## Discarded Approaches
+## Flow Chart
+
+![Flow Chart](https://github.com/user-attachments/assets/c024f52e-1a27-49d9-ab86-f19cc79370f1)
+
+---
+
+## Component Plan
+
+![Komponentenplan_Pausey](https://github.com/user-attachments/assets/99598ff2-6931-4e48-9b13-a455bc1808f3)
+
+---
+
+## Wiring Diagram
+
+![Steckplan_Pausey](https://github.com/user-attachments/assets/8727f94e-d115-4b47-a694-1cf9a27f6ff6)
+
+---
+
+## ScreenShots
+# INSERT SCREENSHOTS HERE!
+
+---
+
+## Report on the implementation process
+
+### Development Process
+
+During the development of Pausey, we followed an iterative and agile approach. We began with ideation and testing, proceeded with parallel development of the microcontroller firmware and frontend components, and concluded with integration and design refinements. Each phase helped us validate assumptions, improve usability, and align the project with the needs of our target group.
+
+### Discarded Approaches
 
 While exploring different gameplay and interaction possibilities, we tested several concepts that we eventually decided to discard:
 
@@ -52,19 +174,13 @@ While exploring different gameplay and interaction possibilities, we tested seve
 
 - **Leaderboard login system**: We considered implementing an individual login system for the leaderboard. However, feedback from interviews, particularly with people over 50, indicated a strong preference for simplicity. Users expressed that they already deal with too much digital information and appreciated not having to manage another account or app.
 
----
-
 ## Design Decisions
 
 The concept of Pausey was shaped early through moodboards and discussions. We envisioned it as a small, calm creature from the forest—something users would perceive as gentle and non-intrusive. The color palette and overall design reflect this inspiration. The user interface was intentionally kept simple, with minimal interaction required. This decision was made to ensure accessibility and comfort, especially for older users who prefer low-complexity devices.
 
----
-
 ## Inspirations
 
 Although we didn’t initially aim for it, someone remarked that Pausey reminded them of a Tamagotchi. We appreciated this observation, as our device is indeed intended to act like a small pet or creature that the user develops a light bond with. However, unlike a Tamagotchi, Pausey is not needy or annoying—it simply exists quietly and gently nudges the user toward healthy movement.
-
----
 
 ## Failures and Replanning
 
@@ -73,8 +189,6 @@ Not everything went smoothly during the build:
 - One of the speaker modules from our hardware kits was defective. We spent considerable time debugging the code before realizing the hardware was the issue. This emphasized the importance of verifying hardware early and regularly.
 
 - Due to the crowded breadboard setup, components such as the LED ring became unstable or loose. We had to invest time into finding a layout that kept connections secure and reliable.
-
----
 
 ## Reflection
 
@@ -98,8 +212,6 @@ The development of Pausey offered numerous learning opportunities and unexpected
 
 - If the device is powered on after one or more scheduled game times have already passed, it still plays them in sequence instead of skipping to the current time. This could be improved in future versions.
 
----
-
 ## Planning
 
 We worked in a step-by-step, agile fashion:
@@ -109,16 +221,12 @@ We worked in a step-by-step, agile fashion:
 3. Firmware development followed, focusing on a clean and modular `.ino` structure.
 4. Finally, we implemented **PHP server scripts** (config, load, unload) and polished the **JavaScript and CSS** for frontend presentation.
 
----
-
 ## Task Distribution
 
 - **HTML/CSS**: Saurabh  
 - **Microcontroller hardware setup**: Jascha  
 - **INO file (Arduino firmware)**: Worked on together  
 - **PHP + Database**: Worked on together  
-
----
 
 ## Tools Used
 
@@ -129,3 +237,8 @@ We were encouraged to use AI tools during development, and we did so extensively
   - **Coding**: GPT-4 mini-high (for writing and testing Arduino code)
   - **Debugging**: GPT-4 mini-high (helped resolve issues and optimize logic)
   - **Explaining**: GPT-4o (for deeper understanding of sensor behavior and architectural advice)
+
+---
+
+## Video-Documentation
+# EMBED VIDEO HERE
