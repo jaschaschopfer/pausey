@@ -167,9 +167,10 @@ After each session, your score is displayed and uploaded to a central database v
 ![Screenshot 2025-05-23 150745](https://github.com/user-attachments/assets/29131677-3de1-4d6c-8eff-8e378ecb25bf)
 
 ### Desktop UI
-![Screenshot 2025-05-23 ![Screenshot 2025-05-23 150332](https://github.com/user-attachments/assets/2a1316c6-9c66-4440-9c22-28a3ccc1d5b3)
-![Screenshot 2025-05-23 150332](https://github.com/user-attachments/assets/8174bab0-431d-442a-9648-d0c6228459e7)
-![Screenshot 2025-05-23 150343](https://github.com/user-attachments/assets/fd263f7e-1bfd-4644-9a93-d45430c90552)
+![Screenshot 2025-05-23 150309](https://github.com/user-attachments/assets/7a9dc493-c1f3-40ad-8567-0cecb32596c8)
+![Screenshot 2025-05-23 150332](https://github.com/user-attachments/assets/8d81dc02-2d54-42c0-b4de-b6b302511b7c)
+![Screenshot 2025-05-23 150343](https://github.com/user-attachments/assets/3ff0613c-2955-46f3-8f87-b972fe61c15c)
+
 
 ### Pictures
 
