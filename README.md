@@ -1,4 +1,7 @@
 # Pausey
+
+Link to Leaderboard page: https://pausey.danocreations.ch/
+
 **IM 4 – Physical Computing**
 
 Pausey is a small desktop companion designed to promote healthy movement habits in the office. Three times per day—at 10:00, 14:00, and 16:00—it invites you to take a short break for one of three mini-games. These games are simple, physical activities detected via sensors. After completing a game, Pausey awards points and reports them to a central leaderboard.
