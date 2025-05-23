@@ -13,23 +13,11 @@
     font-weight: 100 900;
 }
 
-.bush-strip{
-    display:block;          /* remove inline gap      */
-    width:100vw;            /* span the whole screen  */
-    object-fit:fill;        /* stretch, don’t scale   */
-  }  
-  
-  
 
 
 body {
     font-family: 'Sora', sans-serif;
     background-color: #A3C293;
-    /* background-image: url('pausey-background.svg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; */
     color: #000000;
     line-height: 1.6;
     display: flex;
@@ -39,28 +27,16 @@ body {
     min-height: 100vh;
     padding: 0 20px;
     text-align: center;
-   
-}
-
-h1, h2, h3, h4, h5, h6, p {
-  color: #000000;
-}
-
-h1 {
-  font-size: 5rem;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 h2 {
-  font-size: 3rem;
-  color: #Ffffff;
-}
-
-h3 {
-  font-size: 2rem;
-}
-
-p {
-  font-size: 1.5rem;
+    color: #ffffff;
 }
 
 header {
@@ -72,7 +48,6 @@ header {
     text-align: center;
     border: 10px solid #5A3E25;
     border-radius: 40px;
-    min-width: 66vw;
 }
 
 .leaderboard-body {
@@ -82,9 +57,8 @@ header {
     padding: 1rem;
     text-align: center;
     background-color: #5A3E25;
-    border: 10px solid #5A3E25;
     border-radius: 40px;
-    min-width: 70vw;
+
 }
 
 .leaderboard-title {
@@ -93,11 +67,11 @@ header {
     align-items: center;
     padding: 1rem;
     text-align: center;
+    color: #ffffff;
 }
 
 .grid-row{
     display: grid;
-    grid-template-columns: 7% 70% 20%;
     text-align: center;
     width: 100%;
     justify-content: center;
@@ -158,23 +132,195 @@ footer {
     margin-top: 2rem;
 }
 
-footer a {
-    color: #000;
-    text-decoration: none;
-    padding: 1rem;
-    border-radius: 5px;
-    background-color: #E8D5B7;
-    margin: 0 1rem;
+
+
+
+/* Media Queries */
+
+/* For screens upto  375px width */
+
+@media (max-width: 375px) {
+    h1, h2, h3, h4, h5, h6, p {
+        color: #000000;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        color: #ffffff;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .grid-row {
+        grid-template-columns: 20% 60% 20%;
+        padding: 0rem;
+    }
+
+    header {
+        min-width: 90vw;
+    }
+
+    .leaderboard-body {
+        min-width: 95vw;
+    }
 }
 
-footer a:hover {
-    background-color: #D6B370;
+/* For screens between 375px and 768px width */
+@media (min-width: 375px) and (max-width: 768px) {
+    h1, h2, h3, h4, h5, h6, p {
+        color: #000000;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        color: #ffffff;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .grid-row {
+        grid-template-columns: 15% 60% 20%;
+        padding: 0.1rem;
+    }
+
+    header {
+        min-width: 90vw;
+    }
+
+    .leaderboard-body {
+        min-width: 95vw;
+    }
 }
 
-footer p {
-    color: #000;
-    font-size: 1.5rem;
+/* For screens between 768px and 1024px width */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    h1, h2, h3, h4, h5, h6, p {
+        color: #000000;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        color: #ffffff;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .grid-row {
+        grid-template-columns: 10% 70% 20%;
+    }
+
+    header {
+        width: 85vw;
+    }
+
+    .leaderboard-body {
+        width: 90vw;
+    }
 }
 
+/* For screens between 1024px width and 1440px width */
 
+@media (min-width: 1024px) and (max-width: 1440px) {
+    h1, h2, h3, h4, h5, h6, p {
+        color: #000000;
+    }
 
+    h1 {
+        font-size: 5rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+        color: #ffffff;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    .grid-row {
+        grid-template-columns: 6% 75% 20%;
+        padding: 1rem;
+    }
+
+    header {
+        min-width: 70vw;
+    }
+
+    .leaderboard-body {
+        min-width: 80vw;
+    }
+}
+
+/* For screens above 1440px width */
+
+@media (min-width: 1440px) {
+    h1, h2, h3, h4, h5, h6, p {
+        color: #000000;
+    }
+
+    h1 {
+        font-size: 6rem;
+    }
+
+    h2 {
+        font-size: 4rem;
+        color: #ffffff;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 2rem;
+    }
+
+    .grid-row {
+        grid-template-columns: 5% 75% 20%;
+        padding: 1rem;
+    }
+
+     header {
+        min-width: 70vw;
+    }
+
+    .leaderboard-body {
+        min-width: 80vw;
+    }
+}
