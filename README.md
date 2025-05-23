@@ -155,7 +155,24 @@ After each session, your score is displayed and uploaded to a central database v
 ---
 
 ## Pictures and Screenshots
-# INSERT SCREENSHOTS HERE!
+### Mobile UI
+![Screenshot 2025-05-23 150704](https://github.com/user-attachments/assets/318f0cb7-77b0-48c9-8678-8eaea55d9385)
+![Screenshot 2025-05-23 150720](https://github.com/user-attachments/assets/671ec875-cbea-4e9f-afeb-a37745d2dea2)
+![Screenshot 2025-05-23 150730](https://github.com/user-attachments/assets/6d69c899-f945-4739-b7cd-54b1c7efad3c)
+
+
+### Tablet UI
+![Screenshot 2025-05-23 150819](https://github.com/user-attachments/assets/e297ac77-e0cc-451d-84e1-243cbeb99538)
+![Screenshot 2025-05-23 150756](https://github.com/user-attachments/assets/2543c491-e3ca-4d18-a976-f99634848dec)
+![Screenshot 2025-05-23 150745](https://github.com/user-attachments/assets/29131677-3de1-4d6c-8eff-8e378ecb25bf)
+
+### Desktop UI
+![Screenshot 2025-05-23 ![Screenshot 2025-05-23 150332](https://github.com/user-attachments/assets/2a1316c6-9c66-4440-9c22-28a3ccc1d5b3)
+150309](https://github.com/user-attachments/assets/794bc753-2bde-40e7-ab5e-d7a7a614abad)
+![Screenshot 2025-05-23 150343](https://github.com/user-attachments/assets/fd263f7e-1bfd-4644-9a93-d45430c90552)
+
+### Pictures
+
 ![Vordere Seite](https://github.com/user-attachments/assets/45197f57-99f1-420f-a755-74ab10a6ef22)
 ![Seitenansicht](https://github.com/user-attachments/assets/9ceab8ff-9787-4f34-a57b-e7e449bc8c4d)
 ![Hintere Seite](https://github.com/user-attachments/assets/2f565c47-e655-4922-a6da-121a1170c520)
@@ -244,5 +261,9 @@ We were encouraged to use AI tools during development, and we did so extensively
 
 ---
 
+## Stuff that couldn't be implemented
+- **SVG Background**: We tried to implement the background from the Figma mockup using SVG code, but it lead to many problems with responsiveness. So we dropped the SVG background and went with a single color.
+
+---
 ## Video-Documentation
 # EMBED VIDEO HERE
