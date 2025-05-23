@@ -1,6 +1,8 @@
 # Pausey
 
-Link to Leaderboard page: https://pausey.danocreations.ch/ https://im4.saurabhmishra.ch/
+Link to Leaderboard page:
+- https://pausey.danocreations.ch/
+- https://im4.saurabhmishra.ch/
 
 **IM 4 – Physical Computing**
 
