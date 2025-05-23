@@ -267,4 +267,6 @@ We were encouraged to use AI tools during development, and we did so extensively
 
 ---
 ## Video-Documentation
+Click the thumbnail to goto video.
+
 [![PAUSEY DEMO VIDEO](https://img.youtube.com/vi/3JyBxObkB3Q/0.jpg)](https://www.youtube.com/watch?v=3JyBxObkB3Q)
