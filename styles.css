@@ -199,7 +199,7 @@ footer {
     }
 
     .grid-row {
-        grid-template-columns: 15% 60% 20%;
+        grid-template-columns: 15% 55% 25%;
         padding: 0.1rem;
     }
 
